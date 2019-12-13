@@ -1,11 +1,5 @@
 language: objective-c
 osx_image: xcode11
-
-before_install:
-  - gem install cocoapods
-  - pod repo update --silent
-  - gem install xcpretty
-
-script:
-  - swiftlint
-  - set -o pipefail && xcodebuild -workspace KataScreenshot.xcworkspace -scheme 'KataScreenshot' -destination 'platform=iOS Simulator,name=iPhone 8 Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
+xcode_project: KataScreenshot.xcodeproj
+xcode_scheme: KataScreenshot
+xcode_destination: platform=iOS Simulator,name=iPhone 10.1
